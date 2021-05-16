@@ -2,7 +2,8 @@ import os
 from dotenv import load_dotenv
 from flask import Flask
 
-from web_app.routes.home_routes import home_routes
+from web_application.routes.home_routes import home_routes
+from web_application.routes.freestyle_routes import freestyle_routes
 
 load_dotenv()
 
@@ -12,8 +13,7 @@ def create_app():
     app = Flask(__name__)
     app.config["SECRET_KEY"] = SECRET_KEY
     app.register_blueprint(home_routes)
-    app.register_blueprint(book_routes)
-    app.register_blueprint(weather_routes)
+    app.register_blueprint(freestyle_routes)
     return app
 
 if __name__ == "__main__":
