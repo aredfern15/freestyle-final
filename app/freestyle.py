@@ -38,7 +38,24 @@ parsed_response = json.loads(response.text)
 quit()
 
 
+print("-------------------------")
+print(f"PRINT: {YEAR}")
+print(f"SELECTED TEAM: {CITY} {TEAM}")
+print("-------------------------")
+print("REQUESTING TEAM PERFORMANCE")
+print(f"REQUEST AT: {dt_string}")
+print("-------------------------")
+print(f"LEAGUE: {last_refreshed}")
+print(f"DIVISION: {last_refreshed}")
+print(f"WINS: {to_usd(float(latest_close))}")
+print(f"LOSSES {to_usd(float(recent_high))}")
+print(f"GAMES BEHIND: {to_usd(float(recent_low))}")
+print(f"DIVISION RANK: {to_usd(float(recent_low))}")
 
+print(f"WRITING DATA TO CSV... {csv_file_path}")
+print("-------------------------")
+print("GO {TEAM}!") 
+print("-------------------------")
 
 
 #set up API_KEY and possibly default settings
