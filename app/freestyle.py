@@ -21,7 +21,7 @@ else:
 
 api_key = os.environ.get("api_key") 
 #request_url = f"https://fly.sportsdata.io/v3/mlb/scores/json/Standings/2021?key=5df11bf8ab924b3f8daa67c66e4e617c"
-request_url = f"https://fly.sportsdata.io/v3/mlb/scores/json/Standings/{season}?key={api_key}"
+request_url = f"https://fly.sportsdata.io/v3/mlb/scores/json/Standings/2021?key={api_key}"
 response = requests.get(request_url)
 
 #print(type(response))
@@ -30,7 +30,7 @@ response = requests.get(request_url)
 
 
 parsed_response = json.loads(response.text)
-#print(parsed_response)
+print(parsed_response)
 
 
 quit()
