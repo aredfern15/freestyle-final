@@ -2,8 +2,8 @@ import os
 from dotenv import load_dotenv
 from flask import Flask
 
-from web_application.routes.home_routes import home_routes
-from web_application.routes.freestyle_routes import freestyle_routes
+from web_app.routes.home_routes import home_routes
+from web_app.routes.freestyle_routes import freestyle_routes
 
 load_dotenv()
 
