@@ -19,18 +19,16 @@ else:
 
 #check if season has a season 
 
-
 api_key = os.environ.get("api_key") 
 #request_url = f"https://fly.sportsdata.io/v3/mlb/scores/json/Standings/2021?key=5df11bf8ab924b3f8daa67c66e4e617c"
 request_url = f"https://fly.sportsdata.io/v3/mlb/scores/json/Standings/{season}?key={api_key}"
 response = requests.get(request_url)
 
-
 #print(type(response))
 #print(response.status_code)
 #print(response.text)
-#
-#
+
+
 parsed_response = json.loads(response.text)
 #print(parsed_response)
 
@@ -38,33 +36,33 @@ parsed_response = json.loads(response.text)
 quit()
 
 
-print("-------------------------")
-print(f"PRINT: {YEAR}")
-print(f"SELECTED TEAM: {CITY} {TEAM}")
-print("-------------------------")
-print("REQUESTING TEAM PERFORMANCE")
-print(f"REQUEST AT: {dt_string}")
-print("-------------------------")
-print(f"LEAGUE: {last_refreshed}")
-print(f"DIVISION: {last_refreshed}")
-print(f"WINS: {to_usd(float(latest_close))}")
-print(f"LOSSES {to_usd(float(recent_high))}")
-print(f"GAMES BEHIND: {to_usd(float(recent_low))}")
-print(f"DIVISION RANK: {to_usd(float(recent_low))}")
+#print("-------------------------")
+#print(f"PRINT: {YEAR}")
+#print(f"SELECTED TEAM: {CITY} {TEAM}")
+#print("-------------------------")
+#print("REQUESTING TEAM PERFORMANCE")
+#print(f"REQUEST AT: {dt_string}")
+#print("-------------------------")
+#print(f"LATEST DAY: {LAST_REFRESHED}")
+#print(f"LEAGUE: {LEAGUE}")
+#print(f"DIVISION: {DIVISION}")
+#print(f"WINS: {WINS}")
+#print(f"LOSSES {LOSSES}")
+#print(f"DIVISION RANK: {DIVISION_RANK}")
+#print(f"GAMES BEHIND: {GAMES_BEHIND}")
+#print(f"WRITING DATA TO CSV... {csv_file_path}")
+#print("-------------------------")
+#print("GO {TEAM}!") 
+#print("-------------------------")
 
-print(f"WRITING DATA TO CSV... {csv_file_path}")
-print("-------------------------")
-print("GO {TEAM}!") 
-print("-------------------------")
 
-
-#set up API_KEY and possibly default settings
-
-league = os.getenv("league", default="AL")
-division = os.getenv("division", default="East")
-team = os.getenv("team", default="Baltimore Orioles")
-app_env = os.getenv("APP_ENV", default="development")
-
+##set up API_KEY and possibly default settings
+#
+#league = os.getenv("league", default="AL")
+#division = os.getenv("division", default="East")
+#team = os.getenv("team", default="Baltimore Orioles")
+#app_env = os.getenv("APP_ENV", default="development")
+#
 
 
 
