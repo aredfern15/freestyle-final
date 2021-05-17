@@ -24,17 +24,21 @@ response = requests.get(request_url)
 #print(response.status_code)
 #print(response.text)
 parsed_response = json.loads(response.text)
-print(parsed_response)
+#print(parsed_response)
 
 
-print(parsed_response[0]["GamesBehind"])
+team = input("Please enter the team you would like to view: ")
+
+#if team == "Twins":
+#    TEAM = parsed_response[0]["Name"]
+#else: print("nope, try again")
 
 
 
 
 
-#print("-------------------------")
-#print(f"PRINT: {YEAR}")
+print("-------------------------")
+print(f"Season: {season}")
 #print(f"SELECTED TEAM: {CITY} {TEAM}")
 #print("-------------------------")
 #print("REQUESTING TEAM PERFORMANCE")
