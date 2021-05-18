@@ -12,16 +12,15 @@ def test_get_Standings():
 
 
 
-
-def test_hourly_forecasts():
-    # with valid geography, returns the city name and forecast info:
-    results = get_hourly_forecasts(country_code="US", zip_code="20057")
-    assert results["city_name"] == "Washington, DC"
-    assert len(results["hourly_forecasts"]) == 24
-    forecast = results["hourly_forecasts"][0]
-    assert sorted(list(forecast.keys())) == ["conditions", "image_url", "temp", "timestamp"]
-    assert forecast["timestamp"].endswith(":00")
-    assert f"{DEGREE_SIGN}F" in forecast["temp"]
+    def test_hourly_forecasts():
+        # with valid geography, returns the city name and forecast info:
+        results = get_hourly_forecasts(country_code="US", zip_code="20057")
+        assert results["city_name"] == "Washington, DC"
+        assert len(results["hourly_forecasts"]) == 24
+        forecast = results["hourly_forecasts"][0]
+        assert sorted(list(forecast.keys())) == ["conditions", "image_url", "temp", "timestamp"]
+        assert forecast["timestamp"].endswith(":00")
+        assert f"{DEGREE_SIGN}F" in forecast["temp"]
 
     # with invalid geography, fails gracefully and returns nothing:
     invalid_results = get_hourly_forecasts(country_code="US", zip_code="OOPS")
