@@ -4,12 +4,11 @@ from typing import KeysView
 import requests
 from dotenv import load_dotenv 
 #import pandas as pd    #most likely use 
-#from datetime import datetime  #most likely use 
+import datetime  #most likely use 
 load_dotenv()
 
 
 season = input("Please enter the season you would like to view the MLB standings (2020 or 2021): ")
-
 if season == "2020" or "2021": 
      pass
 else: 
@@ -56,7 +55,12 @@ print(f"Season: {season}")
 print(f"SELECTED TEAM: {city} {name}")
 print("-------------------------")
 #print("REQUESTING TEAM PERFORMANCE")
-#print(f"REQUEST AT: {dt_string}")
+#print("-------------------------")
+import time
+named_tuple = time.localtime() 
+time_string = time.strftime("%Y-%m-%d, %H:%M:%S", named_tuple)
+run_time_date = datetime.datetime.now()
+print("RUN AT: " + run_time_date.strftime("%I:%M %p") + " on " + run_time_date.strftime("%B %d") + ", " + run_time_date.strftime("%Y"))
 #print("-------------------------")
 #print(f"LATEST DAY: {LAST_REFRESHED}")
 print(f"LEAGUE: {league}")

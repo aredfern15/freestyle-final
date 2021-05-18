@@ -1,77 +1,77 @@
-import json
-import os
-from typing import KeysView
-import requests
-from dotenv import load_dotenv 
-#import pandas as pd    #most likely use 
-from datetime import datetime
+# import json
+# import os
+# from typing import KeysView
+# import requests
+# from dotenv import load_dotenv 
+# #import pandas as pd    #most likely use 
+# from datetime import datetime
 
-load_dotenv()
+# load_dotenv()
 
-TEAM_NAME = os.getenv("TEAM_NAME", default="Orioles")
-API_KEY = os.getenv("API_KEY")
-APP_ENV = os.getenv("APP_ENV", default="development")
+# TEAM_NAME = os.getenv("TEAM_NAME", default="Orioles")
+# API_KEY = os.getenv("API_KEY")
+# APP_ENV = os.getenv("APP_ENV", default="development")
 
-def set_team_name():
-    if APP_ENV == "development":
-        user_team_name = input("PLEASE INPUT THE TEAM YOU WOULD LIKE TO SEE: ")
-    else:
-        user_team_name = TEAM_NAME
-    print(user_team_name)
-    return user_team_name
+# def set_team_name():
+#     if APP_ENV == "development":
+#         user_team_name = input("PLEASE INPUT THE TEAM YOU WOULD LIKE TO SEE: ")
+#     else:
+#         user_team_name = TEAM_NAME
+#     print(user_team_name)
+#     return user_team_name
 
-# wanted to include previous seasons, but had to pay for premium package 
-def get_Standings(TEAM_NAME):
-    request_url = f"https://fly.sportsdata.io/v3/mlb/scores/json/Standings/2021?key={API_KEY}"
-    response = requests.get(request_url)
-    if response.status_code != 200:
-        return None
-    parsed_response = json.loads(response.text)
+# # wanted to include previous seasons, but had to pay for premium package 
+# def get_Standings(TEAM_NAME):
+#     request_url = f"https://fly.sportsdata.io/v3/mlb/scores/json/Standings/2021?key={API_KEY}"
+#     response = requests.get(request_url)
+#     if response.status_code != 200:
+#         return None
+#     parsed_response = json.loads(response.text)
+#     for name in 
+
+# if __name__ == "__main__":
+
+#     print(f"RUNNING THE STATS RETREIVER IN {APP_ENV.upper()} MODE...")
+
+#     # CAPTURE INPUTS
+
+#     user_team_name = set_team_name()
+#     print("TEAM NAME:", user_team_name)
+
+#     # FETCH DATA
+
+#     result = get_Standings(TEAM_NAME=user_team_name)
+#     if not result:
+#         print("INVALID TEAM NAME. PLEASE CHECK YOUR INPUTS AND TRY AGAIN!")
+#         exit()
+
+#     # DISPLAY OUTPUTS
+
+#     print("-----------------")
+#     print(f"THIS YEAR'S STATS FOR THE {result['user_team_name'].upper()}...")
+#     print("-----------------")
+#     print("REQUESTING TEAM PERFORMANCE")
+#     import time
+#     # allows us to use time. functions 
+#     named_tuple = time.localtime() 
+#     # get struct_time
+#     time_string = time.strftime("%Y-%m-%d, %H:%M:%S", named_tuple)
+#     run_time_date = datetime.datetime.now()
+#     print("Run at: " + run_time_date.strftime("%I:%M %p") + " on " + run_time_date.strftime("%B %d") + ", " + run_time_date.strftime("%Y"))
+#     print("-------------------------")
+#     print(f"LEAGUE: {LEAGUE}")
+#     print(f"DIVISION: {DIVISION}")
+#     print(f"WINS: {WINS}")
+#     print(f"LOSSES {LOSSES}")
+#     print(f"DIVISION RANK: {DIVISION_RANK}")
+#     print(f"GAMES BEHIND: {GAMES_BEHIND}")
+#     print("-------------------------")
+#     print("GO ",user_team_name, "!") 
+#     print("-------------------------")
 
 
-if __name__ == "__main__":
-
-    print(f"RUNNING THE STATS RETREIVER IN {APP_ENV.upper()} MODE...")
-
-    # CAPTURE INPUTS
-
-    user_team_name = set_team_name()
-    print("TEAM NAME:", user_team_name)
-
-    # FETCH DATA
-
-    result = get_Standings(TEAM_NAME=user_team_name)
-    if not result:
-        print("INVALID TEAM NAME. PLEASE CHECK YOUR INPUTS AND TRY AGAIN!")
-        exit()
-
-    # DISPLAY OUTPUTS
-
-    print("-----------------")
-    print(f"THIS YEAR'S STATS FOR THE {result['user_team_name'].upper()}...")
-    print("-----------------")
-    print("REQUESTING TEAM PERFORMANCE")
-    import time
-    # allows us to use time. functions 
-    named_tuple = time.localtime() 
-    # get struct_time
-    time_string = time.strftime("%Y-%m-%d, %H:%M:%S", named_tuple)
-    run_time_date = datetime.datetime.now()
-    print("Run at: " + run_time_date.strftime("%I:%M %p") + " on " + run_time_date.strftime("%B %d") + ", " + run_time_date.strftime("%Y"))
-    print("-------------------------")
-    print(f"LEAGUE: {LEAGUE}")
-    print(f"DIVISION: {DIVISION}")
-    print(f"WINS: {WINS}")
-    print(f"LOSSES {LOSSES}")
-    print(f"DIVISION RANK: {DIVISION_RANK}")
-    print(f"GAMES BEHIND: {GAMES_BEHIND}")
-    print("-------------------------")
-    print("GO ",user_team_name, "!") 
-    print("-------------------------")
-
-
-    for team_standing in result["get_Standings"]:
-        print(team_standing)
+    # for team_standing in result["get_Standings"]:
+    #     print(team_standing)
 
 
 
