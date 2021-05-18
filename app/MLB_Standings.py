@@ -27,24 +27,47 @@ response = requests.get(request_url)
 parsed_response = json.loads(response.text)
 #print(parsed_response)
 
-#team_id = [
-#    {"teamID":20}
-#]
-#
-#selected_id = input("Please input ID: ")
-#matching_products = [p for p in team_id if str(p["teamID"]) == str(selected_id)]
-#matching_product = matching_products[0]
-#print("Selected team: " +"))
-#
-#quit()
+team_name = [
+    {"Name": "Twins", "TeamID": 0},
+    {"Name": "Indians", "TeamID": 1},
+    {"Name": "White Sox", "TeamID": 2},
+    {"Name": "Royals", "TeamID": 3},
+    {"Name": "Tigers", "TeamID": 4},
+    {"Name": "Rays", "TeamID": 5},
+    {"Name": "Yankees", "TeamID": 6},
+    {"Name": "Blue Jays", "TeamID": 7},
+    {"Name": "Orioles", "TeamID": 8},
+    {"Name": "Red Sox", "TeamID": 9},
+    {"Name": "Athletics", "TeamID": 10},
+    {"Name": "Astros", "TeamID": 11},
+    {"Name": "Mariners", "TeamID": 12},
+    {"Name": "Angels", "TeamID": 13},
+    {"Name": "Rangers", "TeamID": 14},
+    {"Name": "Cubs", "TeamID": 15},
+    {"Name": "Cardinals", "TeamID": 16},
+    {"Name": "Reds", "TeamID": 17},
+    {"Name": "Brewers", "TeamID": 18},
+    {"Name": "Pirates", "TeamID": 19},
+    {"Name": "Braves", "TeamID": 20},
+    {"Name": "Marlins", "TeamID": 21},
+    {"Name": "Phillies", "TeamID": 22},
+    {"Name": "Mets", "TeamID": 23},
+    {"Name": "Nationals", "TeamID": 24},
+    {"Name": "Dodgers", "TeamID": 25},
+    {"Name": "Padres", "TeamID": 26},
+    {"Name": "Giants", "TeamID": 27},
+    {"Name": "Rockies", "TeamID": 28},
+    {"Name": "Diamondbacks", "TeamID": 29},
+]
 
-team_name = input("Insert team name: ")
+selected_name = input("Please input a MLB team name (i.e. 'Red Sox' or 'Nationals): ")
+matching_products = [p for p in team_name if str(p["Name"]) == str(selected_name)]
+matching_product = matching_products[0]
+teamID = matching_product["TeamID"]
 
-if team_name == "Twins":
-    teamID = 0 
+#print(teamID)
 
-else:
-    teamID = 1 
+
 
 city = parsed_response[teamID]["City"]
 league = parsed_response[teamID]["League"]
