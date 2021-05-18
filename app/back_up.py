@@ -64,3 +64,24 @@ print(f"GAMES BEHIND: {games_behind}")
 print("-------------------------")
 print(f"GO {name}!") 
 print("-------------------------")
+
+csv_file_path = os.path.join(os.path.dirname(__file__), "..", "data", "standings.csv")
+
+csv_headers = ["City", "League", "Name", "Division", "Wins", "Losses", "DivisionRank", "GamesBehind"]
+
+with open(csv_file_path, "w") as csv_file: # "w" means "open the file for writing"
+    writer = csv.DictWriter(csv_file, fieldnames=csv_headers)
+    writer.writeheader() # uses fieldnames set above
+    for date in dates:
+        daily_prices = tsd[date]
+        writer.writerow({
+            "City": date,
+            "League": daily_prices["1. open"],
+            "Name": daily_prices["2. high"], 
+            "Division": daily_prices["3. low"],
+            "Wins": daily_prices["4. close"],
+            "Losses": daily_prices["5. volume"], 
+            "DivisionRank": daily_prices[], 
+            "GamesBehind": daily_prices[],     
+        })
+
