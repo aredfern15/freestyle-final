@@ -3,6 +3,7 @@ import os
 from typing import KeysView
 import requests
 from dotenv import load_dotenv 
+import csv
 #import pandas as pd    #most likely use 
 #from datetime import datetime  #most likely use 
 load_dotenv()
@@ -26,31 +27,51 @@ response = requests.get(request_url)
 parsed_response = json.loads(response.text)
 #print(parsed_response)
 
-city = parsed_response[0]["City"]
-league = parsed_response[0]["League"]
-name = parsed_response[0]["Name"]
-division = parsed_response[0]["Division"]
-wins = parsed_response[0]["Wins"]
-losses = parsed_response[0]["Losses"]
-division_rank = parsed_response[0]["DivisionRank"]
-games_behind = parsed_response[0]["GamesBehind"]
+#team_id = [
+#    {"teamID":20}
+#]
+#
+#selected_id = input("Please input ID: ")
+#matching_products = [p for p in team_id if str(p["teamID"]) == str(selected_id)]
+#matching_product = matching_products[0]
+#print("Selected team: " +"))
+#
+#quit()
+
+team_name = input("Insert team name: ")
+
+if team_name == "Twins":
+    teamID = 0 
+
+else:
+    teamID = 1 
+
+city = parsed_response[teamID]["City"]
+league = parsed_response[teamID]["League"]
+name = parsed_response[teamID]["Name"]
+division = parsed_response[teamID]["Division"]
+wins = parsed_response[teamID]["Wins"]
+losses = parsed_response[teamID]["Losses"]
+division_rank = parsed_response[teamID]["DivisionRank"]
+games_behind = parsed_response[teamID]["GamesBehind"]
 
 
-#key = parsed_response[0]["Key"]
-
-
-#team = input("Please enter the team you would like to view: ")
-
-
-
-#if team == "Twins":
-#    TEAM = parsed_response[0]["Name"]
-#else: print("nope, try again")
-
-
-
-
-
+##csv_file_path = "data/teams.csv" # a relative filepath
+#csv_file_path=os.path.join(os.path.dirname(__file__), "..", "data", "monthly_sales.csv")
+#
+#with open(csv_file_path, "w") as csv_file: # "w" means "open the file for writing"
+#    writer = csv.DictWriter(csv_file, fieldnames=["city", "name"])
+#    writer.writeheader() # uses fieldnames set above
+#
+#
+#    writer.writerow({
+#        "timestamp": "",
+#        "open": "",
+#        "high": "",
+#        "low": "",
+#
+#    })
+#
 print("-------------------------")
 print(f"Season: {season}")
 print(f"SELECTED TEAM: {city} {name}")
@@ -69,3 +90,6 @@ print(f"GAMES BEHIND: {games_behind}")
 print("-------------------------")
 print(f"GO {name}!") 
 print("-------------------------")
+
+
+
