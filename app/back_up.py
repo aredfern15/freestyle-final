@@ -17,7 +17,7 @@ else:
 
 #check if season has a season 
 api_key = os.environ.get("api_key") 
-request_url = f"https://fly.sportsdata.io/v3/mlb/scores/json/Standings/{season}?key={api_key}"
+request_url = f"https://fly.sportsdata.io/v3/mlb/scores/json/Standings/2020?key={api_key}"
 response = requests.get(request_url)
 #print(type(response))
 #print(response.status_code)
@@ -25,14 +25,25 @@ response = requests.get(request_url)
 parsed_response = json.loads(response.text)
 #print(parsed_response)
 
-city = parsed_response[0]["City"]
-league = parsed_response[0]["League"]
-name = parsed_response[0]["Name"]
-division = parsed_response[0]["Division"]
-wins = parsed_response[0]["Wins"]
-losses = parsed_response[0]["Losses"]
-division_rank = parsed_response[0]["DivisionRank"]
-games_behind = parsed_response[0]["GamesBehind"]
+list_of_team_names = []
+for line in parsed_response: 
+     list_of_team_names.append(line['Name'])
+print(list_of_team_names)
+
+team = input("Please enter the team you would like to view: ")
+capitalized_team = team.capitalize()
+index = list_of_team_names.index(capitalized_team)
+print(index)
+
+team_index = index 
+city = parsed_response[team_index]["City"]
+league = parsed_response[team_index]["League"]
+name = parsed_response[team_index]["Name"]
+division = parsed_response[team_index]["Division"]
+wins = parsed_response[team_index]["Wins"]
+losses = parsed_response[team_index]["Losses"]
+division_rank = parsed_response[team_index]["DivisionRank"]
+games_behind = parsed_response[team_index]["GamesBehind"]
 
 
 #key = parsed_response[0]["Key"]
