@@ -46,7 +46,7 @@ elif sport == 'NFL':
      api_key = os.environ.get("api_key_nfl")
 
 #api_key = os.environ.get("api_key") 
-request_url = f"https://fly.sportsdata.io/v3/{sport}/scores/json/Standings/2021?key={api_key}"
+request_url = f"https://fly.sportsdata.io/v3/{sport}/scores/json/Standings/2020?key={api_key}"
 response = requests.get(request_url)
 #print(type(response))
 #print(response.status_code)
