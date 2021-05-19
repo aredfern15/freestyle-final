@@ -7,12 +7,12 @@ python-dotenv
 pgeocode
 pandas
 requests
- sendgrid==6.6.0
+sendgrid==6.6.0
 
- Flask 
+Flask 
 
- gunicorn 
- #
- # TEST
- #
+gunicorn 
+#
+# TEST
+#
 pytest
