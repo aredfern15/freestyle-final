@@ -2,7 +2,6 @@
 #
 # DEVELOPMENT / PRODUCTION
 #
-csv
 python-dotenv
 pgeocode
 pandas
