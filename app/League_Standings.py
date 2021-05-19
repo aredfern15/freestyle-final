@@ -83,7 +83,7 @@ def findStandings():
      elif sport_league == 'NBA': 
           games_behind = parsed_response[team_index]["GamesBack"]
      elif sport_league == 'NHL' or sport_league == 'NFL':
-          games_behind = "N/A"
+          games_behind = ""
 
      named_tuple = time.localtime() 
      time_string = time.strftime("%Y-%m-%d, %H:%M:%S", named_tuple)
