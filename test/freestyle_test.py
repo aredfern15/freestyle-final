@@ -10,8 +10,6 @@ CI_ENV = os.getenv("CI") == "true"
 
 def test_get_Standings():
 
-
-
     def test_hourly_forecasts():
         # with valid geography, returns the city name and forecast info:
         results = get_hourly_forecasts(country_code="US", zip_code="20057")
