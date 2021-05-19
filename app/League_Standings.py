@@ -1,4 +1,5 @@
 import json
+import csv
 import os
 from typing import KeysView
 import requests
@@ -88,6 +89,11 @@ time_string = time.strftime("%Y-%m-%d, %H:%M:%S", named_tuple)
 run_time_date = datetime.datetime.now()
 last_refreshed = ("RUN AT: " + run_time_date.strftime("%I:%M %p") + " on " + run_time_date.strftime("%B %d") + ", " + run_time_date.strftime("%Y"))
 
+csv_file_path = os.path.join(os.path.dirname(__file__), "..", "data", "standings.csv")
+
+csv_headers = ["Season", " Team", " Division", " Wins", " Losses", " Division Rank"]
+
+
 print("-------------------------")
 print(f"SEASON: {season}")
 if sport_league == 'NFL':
@@ -104,9 +110,20 @@ print(f"WINS: {wins}")
 print(f"LOSSES {losses}")
 print(f"DIVISION RANK: {division_rank}")
 print(f"GAMES BEHIND: {games_behind}")
-#print(f"WRITING DATA TO CSV... {csv_file_path}")
+print(f"WRITING DATA TO CSV... {csv_file_path}")
 print("-------------------------")
 print(f"GO {name}!") 
 print("-------------------------")
 
 
+with open(csv_file_path, "w") as csv_file: # "w" means "open the file for writing"
+    writer = csv.DictWriter(csv_file, fieldnames = csv_headers)
+    writer.writeheader() # uses fieldnames set above
+    for line in parsed_response:
+          writer.writerow({
+               "Season": line['Season'],
+               " Team": line['Name'],
+               " Division": line['Division'],
+               " Wins": line['Wins'],
+               " Losses": line['Losses'], 
+               " Division Rank": line['DivisionRank']})
