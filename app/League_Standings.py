@@ -62,6 +62,13 @@ for line in parsed_response:
 
 team = input("Please enter the team you would like to view: ")
 capitalized_team = team.title()
+
+if capitalized_team in list_of_team_names:
+     pass
+else: 
+     print("Oops, you have entered an invalid team!")
+     exit()
+     
 team_index = list_of_team_names.index(capitalized_team)
 
 if sport_league == 'MLB': 
