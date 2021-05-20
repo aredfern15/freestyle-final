@@ -1,31 +1,32 @@
 Season, Team, Division, Wins, Losses, Division Rank
-2021,White Sox,Central,25,16,1
-2021,Indians,Central,22,18,2
-2021,Royals,Central,19,22,3
-2021,Tigers,Central,16,26,4
-2021,Twins,Central,14,26,5
-2021,Red Sox,East,25,18,1
-2021,Blue Jays,East,23,17,2
-2021,Rays,East,24,19,3
-2021,Yankees,East,23,19,4
-2021,Orioles,East,17,24,5
-2021,Athletics,West,26,17,1
-2021,Astros,West,24,18,2
-2021,Mariners,West,21,22,3
-2021,Angels,West,18,23,4
-2021,Rangers,West,19,25,5
-2021,Cardinals,Central,24,18,1
-2021,Cubs,Central,21,20,2
-2021,Brewers,Central,21,21,3
-2021,Reds,Central,19,21,4
-2021,Pirates,Central,17,24,5
-2021,Mets,East,20,16,1
-2021,Phillies,East,22,20,2
-2021,Braves,East,19,23,3
-2021,Marlins,East,18,23,4
-2021,Nationals,East,16,22,5
-2021,Giants,West,26,16,1
-2021,Padres,West,26,17,2
-2021,Dodgers,West,24,18,3
-2021,Diamondbacks,West,18,25,4
-2021,Rockies,West,15,28,5
+2020,Lightning,Central,43,21,2
+2020,Hurricanes,Central,38,25,4
+2020,Panthers,Central,35,26,4
+2020,Blue Jackets,Central,33,22,6
+2020,Red Wings,Central,17,49,8
+2020,Bruins,East,44,14,1
+2020,Flyers,East,41,21,2
+2020,Capitals,East,41,20,1
+2020,Penguins,East,40,23,3
+2020,Rangers,East,37,28,7
+2020,Islanders,East,35,23,5
+2020,Sabres,East,30,31,6
+2020,Devils,East,28,29,8
+2020,Maple Leafs,North,36,25,3
+2020,Canadiens,North,31,31,5
+2020,Senators,North,25,34,7
+2020,Stars,Central,37,24,3
+2020,Predators,Central,35,26,4
+2020,Blackhawks,Central,32,30,7
+2020,Canucks,North,36,27,3
+2020,Jets,North,37,28,5
+2020,Oilers,North,37,25,2
+2020,Flames,North,36,27,4
+2020,Avalanche,West,42,20,2
+2020,Blues,West,42,19,1
+2020,Golden Knights,West,39,24,1
+2020,Wild,West,35,27,6
+2020,Coyotes,West,33,29,5
+2020,Kings,West,29,35,7
+2020,Sharks,West,29,36,8
+2020,Ducks,West,29,33,6
