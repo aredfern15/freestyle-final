@@ -28,6 +28,7 @@ except ValueError:
      exit()
 season = input("Please enter the season you would like to view the standings for (i.e., 2020 or 2021): ")
 
+valid_seasons = ['2020', '2021']
 """
 This is the second major step of the model--selecting a year. While it would be nice to research any sports year, the
 free API services only provides years 2020 and 2021. The user will need to select a year they're interested in. If they

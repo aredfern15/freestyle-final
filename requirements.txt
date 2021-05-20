@@ -14,5 +14,3 @@ otenv
 load_dotenv 
 datetime  
 pytest
-
-sendgrid==6.6.0 #maybe
