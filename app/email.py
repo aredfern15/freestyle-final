@@ -17,8 +17,8 @@ if __name__ == "__main__":
 
     # CAPTURE INPUTS
 
-    user_country, user_zip = findStandings()
-    print("COUNTRY:", user_country)
+   
+    print("COUNTRY:", )
     print("ZIP CODE:", user_zip)
 
     # FETCH DATA
@@ -44,4 +44,4 @@ if __name__ == "__main__":
         html += f"<li>{forecast['timestamp']} | {forecast['temp']} | {forecast['conditions'].upper()}</li>"
     html += "</ul>"
 
-    send_email(subject="[Daily Briefing] My Morning Report", html=html)
+    send_email(subject="League Standings", html=html)
