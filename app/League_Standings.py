@@ -13,6 +13,12 @@ sport_league = input("Please enter the league (MLB, NBA, NFL, NHL) you would lik
 sport_league = sport_league.upper()
 
 valid_leagues = ['MLB', 'NBA', 'NFL', 'NHL']
+
+"""
+This is the first major step of the model--selecting a professional sports league to research. If the user inputs a correct 
+league, it will move to the next step. If it is an invalid team, the system will quit gracefully and you can start over.
+"""
+
 is_valid = sport_league not in valid_leagues
 try:
      if is_valid == True: 
@@ -21,6 +27,12 @@ except ValueError:
      print("Please enter a valid league. ")
      exit()
 season = input("Please enter the season you would like to view the standings for (i.e., 2020 or 2021): ")
+
+"""
+This is the second major step of the model--selecting a year. While it would be nice to research any sports year, the
+free API services only provides years 2020 and 2021. The user will need to select a year they're interested in. If they
+select an invalid year, then the system will quit gracefully.
+"""
 
 if sport_league == "NFL":
      if season == "2021":
@@ -60,6 +72,11 @@ for line in parsed_response:
      else:
           list_of_team_names.append(line['Name'])
 
+"""
+This is the third major step of the model--selecting a team. The program will access the request_url specific to the 
+league and year selected. If selected correctly, the model will complete with a standings displayed. If selected invalid team, 
+the model with quit gracefully.
+"""
 team = input("Please enter the team you would like to view: ")
 capitalized_team = team.title()
 
@@ -122,6 +139,11 @@ print("-------------------------")
 print(f"GO {name}!") 
 print("-------------------------")
 
+
+"""
+The last part of the model is improting a CSV file that displays the standings in a greater and more detailed 
+way for the user to view. This completes the model for the user. 
+"""
 
 with open(csv_file_path, "w") as csv_file: # "w" means "open the file for writing"
     writer = csv.DictWriter(csv_file, fieldnames = csv_headers)
